@@ -1,13 +1,25 @@
 import useContador from '../hooks/useContador'
 import styles from '../styles/HomePage.module.css'
 import GenericTitleComponent from '../components/GenericTitleComponent'
+import LayoutComponent from '../components/layout/LayoutComponent'
+import AccordionComponent from '../components/AccordionComponent'
 
 export const Home = () => {
   const [aumentar, disminuir, reset, contador] = useContador()
 
   return (
-    <div className={styles.container}>
-      <GenericTitleComponent
+    <LayoutComponent>
+      <div className={styles.container}>
+        <AccordionComponent />
+      </div>
+    </LayoutComponent >
+  )
+}
+
+export default Home
+
+
+{/*<GenericTitleComponent
         texto={'Home Page'}
       />
 
@@ -32,9 +44,4 @@ export const Home = () => {
         >
           -
         </button>
-      </div>
-    </div>
-  )
-}
-
-export default Home
+  </div>*/}

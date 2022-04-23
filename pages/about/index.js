@@ -1,13 +1,16 @@
 import React from 'react'
 import GenericTitleComponent from '../../components/GenericTitleComponent'
+import LayoutComponent from '../../components/layout/LayoutComponent'
 
 const About = () => {
   return (
-    <div>
-      <GenericTitleComponent
-        texto='About Page'
-      />
-    </div>
+    <LayoutComponent>
+      <div>
+        <GenericTitleComponent
+          texto='About Page'
+        />
+      </div>
+    </LayoutComponent>
   )
 }
 
