@@ -3,6 +3,7 @@ import styles from '../styles/HomePage.module.css'
 import GenericTitleComponent from '../components/GenericTitleComponent'
 import LayoutComponent from '../components/layout/LayoutComponent'
 import AccordionComponent from '../components/AccordionComponent'
+import PokemonListComponent from '../components/PokemonListComponent'
 
 export const Home = () => {
   const [aumentar, disminuir, reset, contador] = useContador()
@@ -10,7 +11,8 @@ export const Home = () => {
   return (
     <LayoutComponent>
       <div className={styles.container}>
-        <AccordionComponent />
+        <PokemonListComponent />
+        {/* <AccordionComponent /> */}
       </div>
     </LayoutComponent >
   )
