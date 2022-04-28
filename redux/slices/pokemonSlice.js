@@ -17,7 +17,7 @@ export const pokemonSlice = createSlice({
     name: 'pokemon',
     initialState: initialState,
     reducers: {
-        deleteAPokemon: (state, action) => {
+        deleteAPokemon: (state, action) => { //pokemon/deleteAPokemon
             const name = action.payload;
             const newPokemonList = state.pokemonList.filter(pokemon => {
                 if (pokemon.name !== name) {

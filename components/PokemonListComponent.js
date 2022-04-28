@@ -8,11 +8,11 @@ const PokemonListComponent = () => {
 
     const getPokemonDataAsync = () => {
         dispatch(getPokemonListAsync()).then((response) => {
-            console.log("Pokemon data:", response.payload);
-        });
+            console.log(response.payload);
+        })
     }
 
-    const deletePomekemon = (name) => {
+    const deleteAPokemonByName = (name) => {
         dispatch(deleteAPokemon(name));
     }
 
@@ -24,11 +24,12 @@ const PokemonListComponent = () => {
         <div>
             <ul>
                 {
-                    pokemonList.length > 0 ?
+                    pokemonList.length <= 0 ?
+                        <h1>Cargando...</h1> :
                         pokemonList.map((pokemon, index) => {
                             return (
                                 <li key={index} >
-                                    <div className='my-2' style={{ width: '300px' }}>
+                                    <div className='w-25 my-2'>
                                         <div className='row'>
                                             <div className='col'>
                                                 <p>
@@ -39,7 +40,7 @@ const PokemonListComponent = () => {
                                                 <button
                                                     type='button'
                                                     className='btn rounded-pill btn-outline-danger'
-                                                    onClick={() => deletePomekemon(pokemon.name)}
+                                                    onClick={() => deleteAPokemonByName(pokemon.name)}
                                                 >
                                                     Eliminar
                                                 </button>
@@ -48,9 +49,7 @@ const PokemonListComponent = () => {
                                     </div>
                                 </li>
                             )
-                        }) :
-                        <h1>Cargando...</h1>
-
+                        })
                 }
             </ul>
         </div>
